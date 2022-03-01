@@ -1,0 +1,6 @@
+package ba.sepackage.data;
+
+public class Employee {
+    // add properties like you can't believe it...
+    // maybe drop it like it's hot....
+}
