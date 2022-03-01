@@ -1,6 +1,10 @@
 package ba.sepackage;
 
+import ba.sepackage.data.ConnectionManager;
 import ba.sepackage.view.EmployeeView;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,5 +18,15 @@ public class Main {
         // 7. Calculate salary
         // 8. Add, update, delete worked hours per employee
         // 9. View worked hours per employee
+
+        try {
+            ConnectionManager.getInstance().init();
+            Connection connection = ConnectionManager.getInstance().getConnection();
+
+
+            ConnectionManager.getInstance().close();
+        } catch (SQLException e) {
+            System.out.println("Couldn't create connection to database.... Check yourself, before you wreck yourself... - Public Enemy");
+        }
     }
 }
